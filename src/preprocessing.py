@@ -7,6 +7,7 @@ def create_hour_feature(df):
     # the time column is in seconds, dividing by 3600 to get hrs and then 
     # mod 24 to get the hr of the day
     df["Hour"]=(df["Time"]//3600)%24
+    df=df.drop("Time",axis=1)
     return df
 
 def scale_amounts(X_train, X_test):
